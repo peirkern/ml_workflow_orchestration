@@ -1,2 +1,3 @@
 notebooks/data/
 notebooks/.ipynb_checkpoints/
+airflow/airflow_home/dags/__pycache__/
