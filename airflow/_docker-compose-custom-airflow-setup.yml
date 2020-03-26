@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+    webserver:
+        image: centos/centos7
+        restart: always
+        logging:
+            options:
+                max-size: 10m
+                max-file: "3"
+        volumes:
+            - ./airflow_home/dags:/usr/local/airflow/dags
+        ports:
+            - "8080:8080"
