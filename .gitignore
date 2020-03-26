@@ -1,3 +1,4 @@
 notebooks/data/
 notebooks/.ipynb_checkpoints/
 airflow/airflow_home/dags/__pycache__/
+airflow/airflow_tmp/output/
