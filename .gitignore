@@ -2,3 +2,7 @@ notebooks/data/
 notebooks/.ipynb_checkpoints/
 airflow/airflow_home/dags/__pycache__/
 airflow/airflow_tmp/output/
+airflow_server/airflow_home/dags/__pycache__/
+airflow_server/airflow_tmp/output/
+local/notebook/.ipynb_checkpoints/
+local/notebook/data/
