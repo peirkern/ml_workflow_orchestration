@@ -1,2 +1,2 @@
 docker build -t mlflow .
-docker run -d -v ./filestore:/mlflow -p 5000:5000 mlflow
+docker-compose -f docker-compose-mlflow-server-setup.yml up -d

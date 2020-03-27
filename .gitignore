@@ -6,3 +6,4 @@ airflow_server/airflow_home/dags/__pycache__/
 airflow_server/airflow_tmp/output/
 local/notebook/.ipynb_checkpoints/
 local/notebook/data/
+mlflow_server/filestore/

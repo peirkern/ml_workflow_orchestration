@@ -9,5 +9,6 @@ RUN pip install mlflow==1.7.2
 EXPOSE 5000
 
 CMD mlflow server \
-    --file-store /mlflow \
+	--backend-store-uri /mlflow/backend_store \
+    --default-artifact-root /mlflow/artifact \
     --host 0.0.0.0

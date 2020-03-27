@@ -8,3 +8,5 @@ dependencies:
   - jupyter
   - boruta_py
   - mlflow
+  - seaborn
+  - matplotlib
