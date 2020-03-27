@@ -1,7 +1,8 @@
 version: '3.7'
 services:
     webserver:
-        image: centos/centos7
+        container_name: airflow
+        image: puckel/docker-airflow
         restart: always
         logging:
             options:
@@ -9,5 +10,6 @@ services:
                 max-file: "3"
         volumes:
             - ./airflow_home/dags:/usr/local/airflow/dags
+            - ./airflow_tmp:/tmp/airflow
         ports:
             - "8080:8080"

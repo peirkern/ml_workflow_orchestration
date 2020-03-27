@@ -15,7 +15,7 @@ default_args = {
 	'schedule_interval': '@daily',
 }
 
-dag = DAG('trial_1', catchup=True, default_args=default_args)
+dag = DAG('demo_simple', catchup=True, default_args=default_args)
 
 # t1, t2, t3 and t4 are examples of tasks created using operators
 

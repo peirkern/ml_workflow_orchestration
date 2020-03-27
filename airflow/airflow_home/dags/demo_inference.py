@@ -24,7 +24,7 @@ args = {
 }
 
 dag = DAG(
-    dag_id='trial_ml',
+    dag_id='demo_inference',
     default_args=args,
     tags=['example'],
 	catchup=True, 
@@ -35,21 +35,21 @@ dag = DAG(
 def task_download_data(**kwargs):
 	content = requests.get('https://archive.org/download/datasets_202003/aps-failure-at-scania-trucks-data-set.zip')
 	f = ZipFile(BytesIO(content.content))
-	f.extractall("/tmp/airflow/output/trial_ml/" + str(kwargs['execution_date'])[0:10] + "/download_data")
+	f.extractall("/tmp/airflow/output/demo_inference/" + str(kwargs['execution_date'])[0:10] + "/download_data")
 	
 def process_data(**kwargs):
-	test_ds =  pd.read_csv("/tmp/airflow/output/trial_ml/" + str(kwargs['execution_date'])[0:10] + "/download_data/aps_failure_test_set_processed_8bit.csv", na_values='na')
+	test_ds =  pd.read_csv("/tmp/airflow/output/demo_inference/" + str(kwargs['execution_date'])[0:10] + "/download_data/aps_failure_test_set_processed_8bit.csv", na_values='na')
 	test_features = test_ds.drop('class', axis=1)
 	test_features_balanced = test_features
 	scaler = joblib.load("/tmp/airflow/models/MinMaxScaler.save")
 	test_features_balanced = pd.DataFrame(scaler.transform(test_features_balanced), columns=test_features_balanced.columns)
-	test_features_balanced.to_csv("/tmp/airflow/output/trial_ml/" + str(kwargs['execution_date'])[0:10] + "/processed_data.csv", index = False, header=True)
+	test_features_balanced.to_csv("/tmp/airflow/output/demo_inference/" + str(kwargs['execution_date'])[0:10] + "/processed_data.csv", index = False, header=True)
 
 def predict(**kwargs):
-	train_features_balanced = pd.read_csv("/tmp/airflow/output/trial_ml/" + str(kwargs['execution_date'])[0:10] + "/processed_data.csv")
+	train_features_balanced = pd.read_csv("/tmp/airflow/output/demo_inference/" + str(kwargs['execution_date'])[0:10] + "/processed_data.csv")
 	boruta_pipeline = joblib.load("/tmp/airflow/models/boruta_pipeline.save") 
-	y_pred = boruta_pipeline.predict(train_features_balanced.values)
-	y_pred.to_csv("/tmp/airflow/output/trial_ml/" + str(kwargs['execution_date'])[0:10] + "/result.csv", index = False, header=True)
+	y_pred = boruta_pipeline.predict_proba(train_features_balanced.values)
+	pd.DataFrame(y_pred).to_csv("/tmp/airflow/output/demo_inference/" + str(kwargs['execution_date'])[0:10] + "/result.csv", index = False, header=True)
 
 t1 = PythonOperator(
 	task_id='task_download_data',
