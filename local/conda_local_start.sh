@@ -1,0 +1,8 @@
+
+export MLFLOW_S3_ENDPOINT_URL=minio_url
+export AWS_ACCESS_KEY_ID=minio_access_key
+export AWS_SECRET_ACCESS_KEY=minio_secret_key
+export MLFLOW_URL=mlflow_url
+
+cd notebook
+jupyter notebook

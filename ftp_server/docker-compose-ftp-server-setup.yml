@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+    webserver:
+        container_name: ftp_server
+        image: panubo/vsftpd
+        logging:
+            options:
+                max-size: 10m
+                max-file: "3"
+        environment:
+            - FTP_USER=ftp
+            - FTP_PASSWORD=ftp
+        ports:
+            - "21:21"
+            - "4559-4564:4559-4564"
+        network_mode: "host"
+

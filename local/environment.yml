@@ -10,3 +10,5 @@ dependencies:
   - mlflow
   - seaborn
   - matplotlib
+  - minio
+  - boto3

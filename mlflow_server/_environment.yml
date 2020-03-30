@@ -1,5 +1,0 @@
-name: mlflow_server
-channels:
-  - conda-forge
-dependencies:
-  - mlflow

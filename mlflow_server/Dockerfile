@@ -8,7 +8,14 @@ RUN pip install mlflow==1.7.2
 
 EXPOSE 5000
 
+ENV MLFLOW_S3_ENDPOINT_URL=http://192.168.99.100:9000
+ENV AWS_ACCESS_KEY_ID=minioadmin
+ENV AWS_SECRET_ACCESS_KEY=minioadmin
+
 CMD mlflow server \
-	--backend-store-uri /mlflow/backend_store \
-    --default-artifact-root /mlflow/artifact \
-    --host 0.0.0.0
+    --backend-store-uri sqlite:///mlflow.db \
+    --host 0.0.0.0 \
+    --default-artifact-root s3://mlflow/artifacts
+	
+
+
