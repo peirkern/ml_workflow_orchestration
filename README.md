@@ -15,11 +15,12 @@ cd airflow
 ```
 . cd minio
 ./setup.sh
+```
 4. Setup MLflow
 ```
 cd mlflow
 ./setup.sh
-
+```
 5. run local\notebook\minio_create_bucket.ipynb
 6. run local\notebook\model_pipeline.ipynb
 
