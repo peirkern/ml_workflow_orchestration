@@ -13,7 +13,7 @@ cd airflow
 ```
 3. Setup MinIO (~S3)
 ```
-. cd minio
+cd minio
 ./setup.sh
 ```
 4. Setup MLflow
