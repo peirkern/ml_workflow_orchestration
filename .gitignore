@@ -8,3 +8,4 @@ local/notebook/.ipynb_checkpoints/
 local/notebook/data/
 mlflow_server/filestore/
 minio_server/data/
+minio/data/
