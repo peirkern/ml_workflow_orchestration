@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+    airflow:
+        container_name: airflow
+        image: puckel/docker-airflow
+        restart: always
+        logging:
+            options:
+                max-size: 10m
+                max-file: "3"
+        volumes:
+            - ./airflow/airflow_home/dags:/usr/local/airflow/dags
+            - ./airflow/airflow_tmp:/tmp/airflow
+        ports:
+            - "8080:8080"
+#    minio:
+#        container_name: minio
+#        image: minio/minio
+#        volumes:
+#            - ./minio/data:/data
+#        ports:
+#            - "9000:9000"
+#        command: server /data
+    mlflow:
+        container_name: mlflow
+        image: mlflow
+        logging:
+            options:
+                max-size: 10m
+                max-file: "3"
+        ports:
+            - "5000:5000"

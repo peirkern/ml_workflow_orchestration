@@ -1,28 +1,17 @@
 ## ml_workflow_orchestration
 
 # Instructions
-1. Setup local conda environmet (notebook execution)
+1. Setup local conda environmet with GitBash
 ```
 cd local
 ./setup.sh
 ```
-2. Setup AirFlow
+2. Setup AirFlow, MinIO, MLflow with Docker
 ```
-cd airflow
-./setup.sh
+./docker_setup_all.sh
 ```
-3. Setup MinIO (~S3)
-```
-cd minio
-./setup.sh
-```
-4. Setup MLflow
-```
-cd mlflow
-./setup.sh
-```
-5. run local\notebook\minio_create_bucket.ipynb
-6. run local\notebook\model_pipeline.ipynb
+3. run local\notebook\minio_create_bucket.ipynb
+4. run local\notebook\model_pipeline.ipynb
 
 # Urls (docker)
 - AirFlow: http://192.168.99.100:8080/
