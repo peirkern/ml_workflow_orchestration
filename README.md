@@ -1,5 +1,10 @@
 ## ml_workflow_orchestration
 
+# Prerequisites
+- Docker
+- Git & GitBash
+- Anaconda
+
 # Instructions
 1. Setup local conda environmet with GitBash
 ```
