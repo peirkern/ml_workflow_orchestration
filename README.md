@@ -1,7 +1,7 @@
 ## ml_workflow_orchestration
 
 # Prerequisites
-- Docker
+- Docker Desktop 2.2.0.5
 - Git & GitBash
 - Anaconda
 
