@@ -16,7 +16,8 @@ cd local
 ./docker_setup_all.sh
 ```
 3. run local\notebook\minio_create_bucket.ipynb
-4. run local\notebook\model_pipeline.ipynb
+4. run local\notebook\download_data.ipynb
+5. run local\notebook\model_pipeline.ipynb
 
 # Urls (docker)
 - AirFlow: http://192.168.99.100:8080/

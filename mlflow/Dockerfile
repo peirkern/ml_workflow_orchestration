@@ -8,7 +8,7 @@ RUN pip install mlflow==1.7.2
 
 EXPOSE 5000
 
-ENV MLFLOW_S3_ENDPOINT_URL=http://192.168.99.100:9000
+ENV MLFLOW_S3_ENDPOINT_URL=http://localhost:9000
 ENV AWS_ACCESS_KEY_ID=minioadmin
 ENV AWS_SECRET_ACCESS_KEY=minioadmin
 
