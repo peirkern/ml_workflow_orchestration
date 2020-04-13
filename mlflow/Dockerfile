@@ -3,12 +3,12 @@ FROM python:3.7-slim-buster
 LABEL maintainer "PK <peirkern@gmail.com>"
 
 RUN mkdir /mlflow/
-
-RUN pip install mlflow==1.7.2
+RUN pip install mlflow==1.7.1
+RUN pip install boto3==1.12.32
 
 EXPOSE 5000
 
-ENV MLFLOW_S3_ENDPOINT_URL=http://localhost:9000
+ENV MLFLOW_S3_ENDPOINT_URL=http://127.0.0.1:9000
 ENV AWS_ACCESS_KEY_ID=minioadmin
 ENV AWS_SECRET_ACCESS_KEY=minioadmin
 

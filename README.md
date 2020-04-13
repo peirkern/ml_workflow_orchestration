@@ -5,6 +5,10 @@
 - Git & GitBash
 - Anaconda
 
+# Environment Variables
+- .\Anaconda3\condabin
+- .\Anaconda3\Scripts
+
 # Instructions
 1. Setup local conda environmet with GitBash
 ```
@@ -20,6 +24,6 @@ cd local
 5. run local\notebook\model_pipeline.ipynb
 
 # Urls (docker)
-- AirFlow: http://192.168.99.100:8080/
-- MLflow: http://192.168.99.100:5000/
-- MinIO: http://192.168.99.100:9000/ (minioadmin/minioadmin)
+- AirFlow: http://localhost:8080/
+- MLflow: http://localhost:5000/
+- MinIO: http://localhost:9000/ (minioadmin/minioadmin)
