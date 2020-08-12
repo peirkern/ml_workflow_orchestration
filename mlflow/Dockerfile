@@ -4,11 +4,11 @@ LABEL maintainer "PK <peirkern@gmail.com>"
 
 RUN mkdir /mlflow/
 
-RUN pip install mlflow==1.7.2
+RUN pip install mlflow
 
 EXPOSE 5000
 
-ENV MLFLOW_S3_ENDPOINT_URL=http://localhost:9000
+ENV MLFLOW_S3_ENDPOINT_URL=http://host.docker.internal:9000
 ENV AWS_ACCESS_KEY_ID=minioadmin
 ENV AWS_SECRET_ACCESS_KEY=minioadmin
 

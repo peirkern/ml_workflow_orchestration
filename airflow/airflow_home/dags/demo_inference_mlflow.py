@@ -34,7 +34,7 @@ dag = DAG(
 	start_date=datetime(2020, 3, 24)
 )
 
-mlflow.set_tracking_uri("http://localhost:5000")
+mlflow.set_tracking_uri("http://host.docker.internal:5000")
 mlflow.set_experiment("demo_ml")
 
 boruta_pipeline = mlflow.sklearn.load_model("runs:/7232bf8e8c314e728b1cb99036024d4d/Pipeline")

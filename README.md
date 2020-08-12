@@ -20,6 +20,6 @@ cd local
 5. run local\notebook\model_pipeline.ipynb
 
 # Urls (docker)
-- AirFlow: http://localhost:8080/
-- MLflow: http://localhost:5000/
-- MinIO: http://localhost:9000/ (minioadmin/minioadmin)
+- AirFlow: http://host.docker.internal:8080/
+- MLflow: http://host.docker.internal:5000/
+- MinIO: http://host.docker.internal:9000/ (minioadmin/minioadmin)
