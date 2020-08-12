@@ -16,7 +16,7 @@ services:
         environment:
             AWS_ACCESS_KEY_ID: minioadmin
             AWS_SECRET_ACCESS_KEY: minioadmin
-            MLFLOW_S3_ENDPOINT_URL: http://192.168.99.100:9000
+            MLFLOW_S3_ENDPOINT_URL: http://localhost:9000
 #    minio:
 #        container_name: minio
 #        image: minio/minio
